@@ -253,6 +253,22 @@ body {
   font-weight: 600;
 }
 
+.pet-contact-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0 0 0 .8rem;
+  position: relative;
+  top: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.pet-contact-btn:hover {
+  opacity: 1;
+}
+
 .pet-description {
   font-size: .9rem;
   margin: 0 0 1rem 0;
@@ -433,4 +449,86 @@ textarea.form-field {
   border-radius: 20px;
   padding: 10px 16px;
   margin: 0 0 1rem 0;
+}
+
+/* CONTACT FORM Styles */
+.form-overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.form-overlay-inner{
+  align-self: center;
+  height: minmax(300px, 100%);
+  width: clamp(340px, 880px, 70rem);
+  position: relative;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.07);
+  display: grid;
+  grid-template-columns: 38% 1fr;
+}
+
+.close-form-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2.4rem;
+  transform: scaleX(1.2);
+  margin: .8rem;
+  color: rgba(0, 0, 0, 0.41);
+}
+
+.form-content {
+  padding: 2.4rem 3.4rem;
+}
+
+.form-field {
+  margin-top: 1.4rem;
+}
+
+.form-photo {
+  order: 1;
+  grid-row: 1;
+  position: relative;
+}
+
+.form-photo img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.thankyou {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.63);
+}
+
+.thankyou p {
+  font-size: .9rem;
+  color: #555;
+  font-weight: normal;
+}
+.thankyou p strong {
+  font-size: 2.25rem;
+  color: #000;
+}
+
+.justify-right {
+  display: flex;
+  justify-content: end;
 }
