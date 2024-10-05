@@ -464,6 +464,14 @@ textarea.form-field {
   display: flex;
   justify-content: center;
   align-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.33s ease-out;
+}
+
+.form-overlay--is-visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .form-overlay-inner{
@@ -481,10 +489,20 @@ textarea.form-field {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 2.4rem;
+  cursor: pointer;
+  font-size: 2rem;
   transform: scaleX(1.2);
-  margin: .8rem;
+  text-align: center;
+  padding: 0 .2rem .6rem .2rem;
+  margin: .4rem;
+  width: 2.2rem;
+  height: 2.2rem;
   color: rgba(0, 0, 0, 0.41);
+}
+
+.close-form-overlay:hover {
+  border: solid 1px  #d5d8ff;
+  background-color: #f4f4ff;
 }
 
 .form-content {
@@ -514,18 +532,19 @@ textarea.form-field {
   left: 0;
   right: 0;
   margin: 0;
-  padding: 1rem;
+  padding: .8rem;
   background-color: rgba(255, 255, 255, 0.63);
 }
 
 .thankyou p {
-  font-size: .9rem;
+  font-size: 1.2rem;
   color: #555;
   font-weight: normal;
 }
 .thankyou p strong {
-  font-size: 2.25rem;
+  font-size: 1.6rem;
   color: #000;
+  display: block;
 }
 
 .justify-right {

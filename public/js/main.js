@@ -33,3 +33,36 @@ function handleButtonClick(e) {
     }
   })
 }
+
+// contact form overlay is hidden, becomes visible on button click
+document.querySelector(".form-overlay").style.display = ""
+
+// Contact Form. Get pet data, then make visible
+function openOverlay(el) {
+  document.querySelector(".form-content").dataset.id = el.dataset.id;
+  document.getElementById("contact-pet-name").textContent = el.closest(".pet-card").querySelector(".pet-name").textContent;
+  document.querySelector(".form-photo img").src = el.closest(".pet-card").querySelector(".pet-card-photo img").src;
+  document.querySelector(".form-overlay").classList.add("form-overlay--is-visible");
+}
+
+// contact form overlay hidden after click on X
+document.querySelector(".close-form-overlay").addEventListener("click", closeOverlay);
+
+function closeOverlay() {
+  document.querySelector(".form-overlay").classList.remove("form-overlay--is-visible");
+}
+
+// contact form submission
+document.querySelector(".form-content").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const userValues = {
+    petID: e.target.dataset.id,
+    visitorName: document.querySelector("#visitor-name").value,
+    visitorEmail: document.querySelector("#visitor-email").value,
+    visitorTest: document.querySelector("#visitor-test").value,
+    visitorComment: document.querySelector("#visitor-comment").value,
+  }
+
+  console.log(userValues);
+});
