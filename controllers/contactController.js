@@ -59,7 +59,6 @@ exports.submitContact = async function (req, res, next) {
         comment: sanitizeHtml(req.body.visitorComment, sanitizeOptions),
     }
 
-    console.log(contactObject)
 
     // Send test email to Mailtrap
     const transporter = nodemailer.createTransport({
@@ -96,29 +95,6 @@ exports.submitContact = async function (req, res, next) {
     }
 
     res.send("Thanks for sending data to us")
-
-    // Code suggested by Nodemailer docs that is simpler:
-    // async function mainMail() {
-    //     const info1 = await transporter.sendMail({
-    //         to: contactObject.email,
-    //         from: "catadoption@localhost",
-    //         subject: `Your message about ${doesPetExist.name}`,
-    //         html: `<h3 style="color: purple;">Thank you for your message</h3><p>Your message: <em>${contactObject.comment}</em></p><p>We will be in touch soon!</p>`
-    //     });
-
-    //     console.log("Message sent: %s", info1.messageId);
-
-    //     const info2 = await transporter.sendMail({
-    //         to: "petadoptionmanager@localhost",
-    //         from: "dogadoption@localhost",
-    //         subject: `New message about ${doesPetExist.name}`,
-    //         html: `<h3 style="color: blue;">${contactObject.name} sent a message from the website.</h3><p>Message: <em>${contactObject.comment}</em></p><p>Animal: ${doesPetExist.name}</p><p>Please get in touch at ${contactObject.email}</p>`
-    //     });
-
-    //     console.log("Message sent: %s", info2.messageId);
-    // }
-
-    // mainMail().catch(console.error);
 
 }
 
