@@ -253,6 +253,22 @@ body {
   font-weight: 600;
 }
 
+.pet-contact-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0 0 0 .8rem;
+  position: relative;
+  top: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.pet-contact-btn:hover {
+  opacity: 1;
+}
+
 .pet-description {
   font-size: .9rem;
   margin: 0 0 1rem 0;
@@ -433,4 +449,205 @@ textarea.form-field {
   border-radius: 20px;
   padding: 10px 16px;
   margin: 0 0 1rem 0;
+}
+/* End Admin Page Styles */
+
+/* CONTACT FORM Styles */
+.form-overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.33s ease-out;
+}
+
+.form-overlay--is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.form-overlay-inner{
+  position: relative;
+  display: flex;
+  justify-content: left;
+  align-self: center;
+  max-height: 100%;
+  width: clamp(280px, 92%, 70rem);
+  position: relative;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.07);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 580px) {
+  .form-overlay {
+    display: flex;
+    align-content: center;
+    overflow-y: hidden;
+  }
+  .form-overlay-inner {
+    grid-template-columns: 38% 1fr;
+    justify-content: center;
+  }
+}
+
+.close-form-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 31;
+  cursor: pointer;
+  font-size: 2rem;
+  transform: scaleX(1.2);
+  text-align: center;
+  padding: 0 .2rem .6rem .2rem;
+  margin: .4rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  color: rgba(0, 0, 0, 0.41);
+}
+
+.close-form-overlay:hover {
+  border: solid 1px  #d5d8ff;
+  background-color: #f4f4ff;
+}
+
+.form-field {
+  margin-top: 1.4rem;
+}
+
+.form-photo {
+  order: 1;
+  grid-row: 1;
+  position: relative;
+  margin-left: 1.4rem;
+}
+
+.form-photo img {
+  display: block;
+  height: 260px;
+  object-fit: cover;
+}
+
+.form-content {
+  padding: 1rem;
+}
+
+@media screen and (min-width: 580px) {
+  .form-content {
+    padding: 2.4rem 3.4rem;
+    position: relative;
+  }
+  .form-photo {
+    height: auto;
+    margin-left: 0;
+  }
+  .form-photo img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.thankyou {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: .4rem;
+  background-color: rgba(255, 255, 255, 0.63);
+}
+
+.thankyou p {
+  font-size: 1rem;
+  color: #555;
+  font-weight: normal;
+}
+.thankyou p strong {
+  font-size: 1.4rem;
+  color: #000;
+  display: block;
+}
+
+@media screen and (min-width: 580px) {
+  .thankyou {
+    padding: .8rem;
+  }
+  .thankyou p {
+    font-size: 1.2rem;
+  }
+}
+
+.contact-confirm {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease-out;
+}
+
+.contact-confirm svg {
+  color: rgb(8, 150, 8);
+  vertical-align: middle;
+}
+
+.contact-confirm p {
+  font-size: 2rem;
+}
+
+.contact-confirm--visible {
+  opacity: 1;
+  visibility: visible;
+  text-align: center;
+}
+
+.justify-right {
+  display: flex;
+  justify-content: end;
+}
+
+/* End Contact form styles */
+
+/* View Contacts Styles */
+.contact-list {
+  width: clamp(300px, 90%, 76rem);
+  border-collapse: collapse;
+}
+
+.contact-list th {
+  padding: 0 .6rem;
+  vertical-align: top;
+  text-align: left;
+  color: #2030bc;
+}
+
+.contact-list td {
+  padding: .6rem;
+  vertical-align: top;
+}
+
+.contact-list tr:nth-child(even) {
+  background-color: #f1f1f1;
 }
